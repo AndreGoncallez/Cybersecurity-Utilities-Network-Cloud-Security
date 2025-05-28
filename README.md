@@ -1,62 +1,59 @@
-# Security Operations & Cybersecurity Utilities
+# USBForensics
+Este script analisa a atividade de arquivos em dispositivos USB removíveis, identificando arquivos que foram copiados ou modificados em um período específico. Útil para auditoria de segurança e controle de dados.
 
-Bem-vindo ao repositório **Security Operations & Cybersecurity Utilities**!
+## 🚀 Recursos
+- ✅ Detecção automática de pendrives
+- 📊 Estatísticas detalhadas
+- 🎯 Categorização de arquivos
+- 📋 Relatórios exportáveis
+- 🔍 Análise de logs do sistema
 
-Este projeto foi criado para profissionais de Segurança da Informação, Analistas de SOC, NOC, Blue Team, Red Team, Cybersegurança e SecDevOps. Aqui você encontra ferramentas, scripts, guias e exemplos práticos para operações de defesa, análise, automação e resposta a incidentes.
+## 🚀 Recursos Profissionais:
 
-## 🚀 Propósito
+✅ Documentação completa com .SYNOPSIS, .DESCRIPTION, .EXAMPLE
 
-Centralizar recursos úteis e práticos para o dia a dia de profissionais de segurança, abrangendo desde atividades de monitoramento, resposta a incidentes, automação de tarefas, análise de logs, até integração de práticas de segurança em pipelines de DevOps (SecDevOps).
+✅ Parâmetros validados e com help
 
-## ⚙️ O que você encontra aqui
+✅ Tratamento robusto de erros
 
-- **Scripts de Automação & Detecção**
-  - Scripts em Python, Bash, PowerShell para automação de respostas, coletas forenses, buscas em logs, bloqueio rápido, hunting de ameaças, etc.
-- **Ferramentas de Monitoramento & Análise**
-  - Exemplos de integração com SIEM, SOAR, IDS/IPS, firewalls, análise de tráfego, parsing de logs, dashboards, etc.
-- **Modelos de Playbooks e Runbooks**
-  - Procedimentos padronizados para resposta a incidentes, análise de eventos, investigação de alertas, contenção e erradicação.
-- **Checklists e Guias**
-  - Listas para triagem de incidentes, verificação de compliance, hardening de servidores, análise de vulnerabilidades, checklist de onboarding/offboarding, etc.
-- **Recursos para SecDevOps**
-  - Scripts de automação de segurança em pipelines CI/CD, exemplos de configuração de ferramentas SAST/DAST, integração de scanners, validação de infraestrutura como código (IaC), monitoramento de containers, etc.
-- **Dicas & Boas Práticas**
-  - Orientações de hardening, políticas de senha, recomendações de segmentação de rede, materiais de referência, links úteis e alertas de ameaças.
+✅ Interface visual com emojis e cores
 
-## 🧰 Exemplos de Utilização
+✅ Estatísticas detalhadas por categoria e dispositivo
 
-- **Script para hunting automatizado de IOC em logs de SIEM**
-- **Playbook de resposta a ransomware**
-- **Automação de análise de vulnerabilidades em pipelines CI/CD**
-- **Modelos de alertas para SOC**
-- **Checklist de hardening de servidores Windows e Linux**
-- **Procedimento para análise de incidentes de phishing**
-- **Scripts para coleta forense rápida em endpoints**
-- **Integração de scanners SAST/DAST em pipelines DevOps**
+✅ Categorização automática de arquivos
 
-## 🔥 Para quem é este repositório?
+✅ Progress feedback para operações longas
 
-- Analistas de Segurança da Informação (SOC, NOC, Blue Team, Red Team)
-- Profissionais de Cybersegurança e Resposta a Incidentes
-- Engenheiros e Analistas SecDevOps/DevSecOps
-- Equipes de Infraestrutura e Cloud Security
-- Auditores, Pentesters e Consultores de Segurança
-- Estudantes de segurança e profissionais em busca de automação e padronização de processos
+## 🚀 Funcionalidades Avançadas:
 
-## 💡 Como contribuir
+📊 Estatísticas: Por categoria, dispositivo e tamanho
 
-Sua experiência é muito bem-vinda!  
-Se você tem scripts, playbooks, dicas, ferramentas ou sugestões que possam beneficiar a comunidade de segurança, fique à vontade para enviar um pull request ou abrir uma issue.
+🎯 Categorização: Imagens, vídeos, documentos, etc.
 
-## 📝 Licença
+📋 Relatórios: Simples ou detalhados
 
-Este repositório é aberto para colaboração. Consulte o arquivo LICENSE para mais detalhes.
+💾 Export: Salvar em arquivo de texto
 
----
+🔍 Logs do Sistema: Análise de eventos USB
 
-Mantenha este repositório nos seus favoritos e volte sempre que precisar de uma solução rápida para desafios do dia a dia de segurança!
+⚡ Performance: Processamento otimizado
 
----
 
-**Mantenedor:**  
-Andre Goncallez
+## 📖 Como usar
+```powershell
+# Análise básica (último dia)
+.\USBFileMonitor.ps1
+
+# Últimos 7 dias com detalhes
+.\USBFileMonitor.ps1 -Dias 7 -Detalhado
+
+# Salvar relatório
+.\USBFileMonitor.ps1 -SalvarEm "relatorio.txt"
+```
+
+## 🔧 Requisitos
+
+* PowerShell 5.0+
+* Windows 10/11
+* Execute como Admin para melhor precisão
+
