@@ -1,62 +1,85 @@
 # Security Operations & Cybersecurity Utilities
 
+![GitHub repo size](https://img.shields.io/github/repo-size/andreGoncallez/security-operations)
+![GitHub license](https://img.shields.io/github/license/andreGoncallez/security-operations)
+![GitHub issues](https://img.shields.io/github/issues/andreGoncallez/security-operations)
+
 Bem-vindo ao repositório **Security Operations & Cybersecurity Utilities**!
 
-Este projeto foi criado para profissionais de Segurança da Informação, Analistas de SOC, NOC, Blue Team, Red Team, Cybersegurança e SecDevOps. Aqui você encontra ferramentas, scripts, guias e exemplos práticos para operações de defesa, análise, automação e resposta a incidentes.
+Este projeto foi criado para profissionais de Segurança da Informação, analistas de SOC, NOC, Blue Team, Red Team, Cybersegurança e SecDevOps. Aqui você encontrará uma coleção de ferramentas, scripts, guias e exemplos práticos para operações de defesa, automação, análise e resposta a incidentes.
+
+## Índice
+
+- [🚀 Propósito](#-propósito)  
+- [⚙️ O que você encontra aqui](#-o-que-você-encontra-aqui)  
+- [🧰 Exemplos de Utilização](#-exemplos-de-utilização)  
+- [🔥 Para quem é este repositório?](#-para-quem-é-este-repositório)  
+- [💡 Como contribuir](#-como-contribuir)  
+- [📝 Licença](#-licença)  
+- [📫 Contato](#-contato)
 
 ## 🚀 Propósito
 
-Centralizar recursos úteis e práticos para o dia a dia de profissionais de segurança, abrangendo desde atividades de monitoramento, resposta a incidentes, automação de tarefas, análise de logs, até integração de práticas de segurança em pipelines de DevOps (SecDevOps).
+O objetivo principal deste repositório é centralizar recursos úteis e práticos para o dia a dia de profissionais de segurança, abrangendo desde monitoramento e análise até resposta a incidentes, automação e integração de segurança em pipelines (SecDevOps).
 
 ## ⚙️ O que você encontra aqui
 
-- **Scripts de Automação & Detecção**
-  - Scripts em Python, Bash, PowerShell para automação de respostas, coletas forenses, buscas em logs, bloqueio rápido, hunting de ameaças, etc.
-- **Ferramentas de Monitoramento & Análise**
-  - Exemplos de integração com SIEM, SOAR, IDS/IPS, firewalls, análise de tráfego, parsing de logs, dashboards, etc.
-- **Modelos de Playbooks e Runbooks**
-  - Procedimentos padronizados para resposta a incidentes, análise de eventos, investigação de alertas, contenção e erradicação.
-- **Checklists e Guias**
-  - Listas para triagem de incidentes, verificação de compliance, hardening de servidores, análise de vulnerabilidades, checklist de onboarding/offboarding, etc.
-- **Recursos para SecDevOps**
-  - Scripts de automação de segurança em pipelines CI/CD, exemplos de configuração de ferramentas SAST/DAST, integração de scanners, validação de infraestrutura como código (IaC), monitoramento de containers, etc.
-- **Dicas & Boas Práticas**
-  - Orientações de hardening, políticas de senha, recomendações de segmentação de rede, materiais de referência, links úteis e alertas de ameaças.
+- **Scripts de Automação & Detecção**  
+  Scripts em Python, Bash e PowerShell para hunting, coleta forense, bloqueios automáticos, parsing de logs e resposta a incidentes.
+
+- **Ferramentas de Monitoramento & Análise**  
+  Exemplos de integração com SIEM, SOAR, IDS/IPS, firewalls, dashboards e análise de tráfego.
+
+- **Modelos de Playbooks e Runbooks**  
+  Procedimentos padronizados para investigação, contenção e erradicação de ameaças.
+
+- **Checklists e Guias**  
+  Triagem de incidentes, verificação de compliance, hardening de sistemas, e onboarding/offboarding seguro.
+
+- **Recursos para SecDevOps**  
+  Segurança em pipelines CI/CD, SAST/DAST, scanners, validação de IaC e monitoramento de containers.
+
+- **Dicas & Boas Práticas**  
+  Hardening, políticas, segmentação, referências úteis e alertas de ameaças.
 
 ## 🧰 Exemplos de Utilização
 
-- **Script para hunting automatizado de IOC em logs de SIEM**
-- **Playbook de resposta a ransomware**
-- **Automação de análise de vulnerabilidades em pipelines CI/CD**
-- **Modelos de alertas para SOC**
-- **Checklist de hardening de servidores Windows e Linux**
-- **Procedimento para análise de incidentes de phishing**
-- **Scripts para coleta forense rápida em endpoints**
-- **Integração de scanners SAST/DAST em pipelines DevOps**
+- Script para hunting automatizado de IOC em SIEM  
+- Playbook de resposta a ransomware  
+- Automação de análise de vulnerabilidades em pipelines CI/CD  
+- Modelos de alertas e dashboards para SOC  
+- Checklist de hardening para servidores Linux e Windows  
+- Procedimento de resposta a phishing  
+- Scripts de coleta forense rápida em endpoints  
+- Integração de SAST/DAST em pipelines DevOps
 
 ## 🔥 Para quem é este repositório?
 
-- Analistas de Segurança da Informação (SOC, NOC, Blue Team, Red Team)
-- Profissionais de Cybersegurança e Resposta a Incidentes
-- Engenheiros e Analistas SecDevOps/DevSecOps
-- Equipes de Infraestrutura e Cloud Security
-- Auditores, Pentesters e Consultores de Segurança
-- Estudantes de segurança e profissionais em busca de automação e padronização de processos
+- Analistas de Segurança da Informação (SOC, NOC, Blue/Red Team)  
+- Profissionais de Cybersegurança e Resposta a Incidentes  
+- Engenheiros e analistas SecDevOps / DevSecOps  
+- Times de Infraestrutura e Cloud Security  
+- Pentesters, auditores e consultores de segurança  
+- Estudantes e entusiastas de segurança que buscam padronização e automação
 
 ## 💡 Como contribuir
 
 Sua experiência é muito bem-vinda!  
-Se você tem scripts, playbooks, dicas, ferramentas ou sugestões que possam beneficiar a comunidade de segurança, fique à vontade para enviar um pull request ou abrir uma issue.
+Envie pull requests com ferramentas, scripts, modelos, dicas ou abra issues com sugestões.
+
+Antes de contribuir, confira nosso [Guia de Contribuição](CONTRIBUTING.md) (caso exista).
 
 ## 📝 Licença
 
-Este repositório é aberto para colaboração. Consulte o arquivo LICENSE para mais detalhes.
+Este projeto está licenciado sob a [MIT License](LICENSE).
 
----
+## 📫 Contato
 
-Mantenha este repositório nos seus favoritos e volte sempre que precisar de uma solução rápida para desafios do dia a dia de segurança!
+- [LinkedIn](https://www.linkedin.com/in/andregoncallez)  
+- E-mail: andregoncallez@yahoo.com.br
 
 ---
 
 **Mantenedor:**  
 Andre Goncallez
+"""
