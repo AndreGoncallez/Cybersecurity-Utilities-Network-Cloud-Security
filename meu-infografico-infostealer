@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: A Ameaça dos Infostealers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d1117; 
+            color: #c9d1d9;
+        }
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .text-accent { color: #58a6ff; }
+        .bg-accent { background-color: #58a6ff; }
+        .border-accent { border-color: #58a6ff; }
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.025em; }
+        .flow-step {
+            border: 2px solid #30363d;
+            transition: all 0.3s ease-in-out;
+        }
+        .flow-step:hover {
+            border-color: #58a6ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        .flow-arrow::after {
+            content: '➔';
+            font-size: 2rem;
+            color: #58a6ff;
+            display: block;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 1024px) {
+            .flow-arrow::after {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-accent mb-4">INFOSTEALERS</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-400">Uma análise visual da anatomia de um dos malwares mais perigosos da atualidade, que opera nas sombras para roubar as suas informações mais valiosas.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="distribution">
+                <h2 class="text-3xl md:text-4xl text-center mb-8">Como os Infostealers se Espalham?</h2>
+                <p class="text-center max-w-2xl mx-auto mb-10 text-gray-400">Infostealers utilizam diversas táticas de engenharia social e exploração de vulnerabilidades para infetar os seus alvos. Conhecer os vetores de ataque é o primeiro passo para uma defesa eficaz.</p>
+                <div class="card rounded-lg shadow-xl p-4 md:p-6">
+                    <div class="chart-container mx-auto h-80 md:h-96">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-500">Distribuição percentual estimada dos principais vetores de infeção por infostealers.</p>
+                </div>
+            </section>
+            
+            <section id="what-they-steal">
+                <h2 class="text-3xl md:text-4xl text-center mb-8">Os Alvos Principais: O Que Eles Roubam?</h2>
+                <p class="text-center max-w-2xl mx-auto mb-10 text-gray-400">Uma vez dentro do sistema, o infostealer realiza uma varredura completa em busca de dados valiosos. O foco principal são credenciais que dão acesso direto à vida digital e financeira da vítima.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div class="card rounded-lg shadow-lg p-6 text-center flex flex-col justify-center items-center">
+                        <span class="text-5xl mb-3">🔑</span>
+                        <h3 class="text-xl font-bold mb-2">Credenciais de Login</h3>
+                        <p class="text-gray-400 text-sm">Nomes de utilizador e senhas de navegadores, emails e apps.</p>
+                    </div>
+                    <div class="card rounded-lg shadow-lg p-6 text-center flex flex-col justify-center items-center">
+                        <span class="text-5xl mb-3">🍪</span>
+                        <h3 class="text-xl font-bold mb-2">Cookies de Sessão</h3>
+                        <p class="text-gray-400 text-sm">Permitem acesso a contas online, contornando a necessidade de senha.</p>
+                    </div>
+                    <div class="card rounded-lg shadow-lg p-6 text-center flex flex-col justify-center items-center">
+                        <span class="text-5xl mb-3">💳</span>
+                        <h3 class="text-xl font-bold mb-2">Dados Financeiros</h3>
+                        <p class="text-gray-400 text-sm">Detalhes de cartões de crédito e carteiras de criptomoedas.</p>
+                    </div>
+                    <div class="card rounded-lg shadow-lg p-6 text-center flex flex-col justify-center items-center">
+                        <span class="text-5xl mb-3">📄</span>
+                        <h3 class="text-xl font-bold mb-2">Ficheiros Pessoais</h3>
+                        <p class="text-gray-400 text-sm">Documentos que contêm palavras como "senha" ou "banco".</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="how-it-works">
+                <h2 class="text-3xl md:text-4xl text-center mb-8">A Anatomia de um Ataque</h2>
+                <p class="text-center max-w-2xl mx-auto mb-12 text-gray-400">O processo de um ataque de infostealer é rápido e metódico, desde a infeção inicial até à extração dos dados para o servidor do atacante.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                     <div class="flow-step card rounded-lg shadow-lg p-6 text-center h-full flex flex-col justify-center">
+                        <h3 class="text-xl font-bold">1. Infeção</h3>
+                        <p class="text-sm text-gray-400 mt-2">A vítima clica num link malicioso, descarrega um anexo ou software pirateado.</p>
+                    </div>
+                    <div class="flow-arrow text-center hidden lg:block"></div>
+                    <div class="flow-step card rounded-lg shadow-lg p-6 text-center h-full flex flex-col justify-center">
+                        <h3 class="text-xl font-bold">2. Execução</h3>
+                        <p class="text-sm text-gray-400 mt-2">O malware é executado, muitas vezes em segundo plano, sem qualquer indicação visível.</p>
+                    </div>
+                    <div class="flow-arrow text-center hidden lg:block"></div>
+                    <div class="flow-step card rounded-lg shadow-lg p-6 text-center h-full flex flex-col justify-center lg:col-start-5">
+                        <h3 class="text-xl font-bold">3. Recolha de Dados</h3>
+                        <p class="text-sm text-gray-400 mt-2">O infostealer varre o sistema em busca de senhas, cookies, dados de cartões, etc.</p>
+                    </div>
+                     <div class="flow-step card rounded-lg shadow-lg p-6 text-center h-full flex flex-col justify-center lg:col-start-3 lg:row-start-2 mt-8 lg:mt-0">
+                        <h3 class="text-xl font-bold">4. Exfiltração</h3>
+                        <p class="text-sm text-gray-400 mt-2">Os dados recolhidos são comprimidos e enviados para um servidor de Comando e Controlo (C2) do atacante.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact">
+                <h2 class="text-3xl md:text-4xl text-center mb-8">O Impacto Devastador</h2>
+                <p class="text-center max-w-2xl mx-auto mb-10 text-gray-400">As consequências de uma infeção vão muito além da perda de acesso a uma conta. Elas podem resultar em perdas financeiras significativas e roubo de identidade com efeitos duradouros.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card rounded-lg shadow-xl p-4 md:p-6">
+                        <h3 class="text-2xl font-bold text-center mb-4 text-accent">Impacto por Categoria</h3>
+                         <div class="chart-container mx-auto h-80 md:h-96">
+                            <canvas id="impactChart"></canvas>
+                        </div>
+                        <p class="text-center mt-4 text-sm text-gray-500">Probabilidade relativa dos principais impactos após uma infeção bem-sucedida.</p>
+                    </div>
+                    <div class="card rounded-lg shadow-xl p-6 md:p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-6 text-accent">Um Ciclo Vicioso</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-accent text-2xl mr-4">💸</span>
+                                <div><strong class="text-white">Perdas Financeiras:</strong> Acesso direto a contas bancárias e uso fraudulento de cartões de crédito.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent text-2xl mr-4">🎭</span>
+                                <div><strong class="text-white">Roubo de Identidade:</strong> Uso de dados pessoais para cometer fraudes em nome da vítima.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent text-2xl mr-4">🔗</span>
+                                <div><strong class="text-white">Ataques em Cadeia:</strong> Uso de contas comprometidas para lançar ataques de phishing contra os contactos da vítima.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent text-2xl mr-4">📉</span>
+                                 <div><strong class="text-white">Danos à Reputação:</strong> Tanto a nível pessoal como empresarial, a perda de confiança pode ser irreparável.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="prevention">
+                 <h2 class="text-3xl md:text-4xl text-center mb-8">Como se Proteger: Uma Defesa em Camadas</h2>
+                 <p class="text-center max-w-2xl mx-auto mb-10 text-gray-400">Nenhum método é 100% infalível, mas uma estratégia de defesa em múltiplas camadas aumenta drasticamente a sua resiliência contra infostealers e outros malwares.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3"><span class="text-accent mr-2">🛡️</span>Ferramentas Essenciais</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                            <li>Software Antimalware/Antivírus</li>
+                            <li>Firewall Ativo</li>
+                            <li>Gestor de Senhas</li>
+                        </ul>
+                    </div>
+                    <div class="card rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3"><span class="text-accent mr-2">🔄</span>Hábitos Digitais Seguros</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                            <li>Ativar Autenticação de 2 Fatores (2FA)</li>
+                            <li>Usar Senhas Fortes e Únicas</li>
+                            <li>Manter Software e SO Atualizados</li>
+                        </ul>
+                    </div>
+                    <div class="card rounded-lg p-6 sm:col-span-2 lg:col-span-1">
+                        <h3 class="text-xl font-bold mb-3"><span class="text-accent mr-2">🧠</span>Consciência e Ceticismo</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                            <li>Desconfiar de emails e links</li>
+                            <li>Descarregar de fontes oficiais</li>
+                            <li>Monitorizar atividades suspeitas</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-700">
+            <p class="text-sm text-gray-500">Este infográfico é uma representação visual de dados e conceitos sobre cibersegurança. Mantenha-se informado e seguro.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines.filter(line => line.length > 0);
+        };
+        
+        const chartColors = {
+            accent: '#58a6ff',
+            primary: '#1f6feb',
+            secondary: '#2ea043',
+            tertiary: '#db6d28',
+            quaternary: '#a371f7',
+            grid: 'rgba(199, 209, 217, 0.2)',
+            ticks: '#8b949e',
+            text: '#c9d1d9'
+        };
+
+        const commonOptions = {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: chartColors.text,
+                        font: { size: 12 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: chartColors.ticks },
+                    grid: { color: chartColors.grid }
+                },
+                x: {
+                    ticks: { color: chartColors.ticks },
+                    grid: { color: 'transparent' }
+                }
+            }
+        };
+
+        const distributionData = {
+            labels: ['Phishing e Engenharia Social', 'Software Pirata ou Bundled', 'Anúncios Maliciosos', 'Exploit Kits'].map(wrapLabel),
+            datasets: [{
+                label: 'Métodos de Distribuição (%)',
+                data: [55, 25, 15, 5],
+                backgroundColor: [chartColors.accent, chartColors.primary, chartColors.tertiary, chartColors.quaternary],
+                borderColor: '#161b22',
+                borderWidth: 2
+            }]
+        };
+
+        const distributionCtx = document.getElementById('distributionChart').getContext('2d');
+        new Chart(distributionCtx, {
+            type: 'doughnut',
+            data: distributionData,
+            options: {
+                ...commonOptions,
+                scales: { y: { display: false }, x: { display: false } },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: chartColors.text,
+                            font: { size: 12 }
+                        }
+                    }
+                }
+            }
+        });
+
+        const impactData = {
+            labels: ['Comprometimento de Contas', 'Perdas Financeiras', 'Roubo de Identidade', 'Danos à Reputação'].map(wrapLabel),
+            datasets: [{
+                label: 'Probabilidade de Impacto (%)',
+                data: [85, 70, 60, 45],
+                backgroundColor: chartColors.primary,
+                borderColor: chartColors.accent,
+                borderWidth: 2,
+                barThickness: 25,
+            }]
+        };
+
+        const impactCtx = document.getElementById('impactChart').getContext('2d');
+        new Chart(impactCtx, {
+            type: 'bar',
+            data: impactData,
+            options: {
+                ...commonOptions,
+                indexAxis: 'y',
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        ...commonOptions.scales.x,
+                        suggestedMax: 100,
+                        ticks: {
+                            ...commonOptions.scales.x.ticks,
+                            callback: function(value) { return value + "%" }
+                        }
+                    },
+                    y: { ...commonOptions.scales.y, grid: { color: 'transparent' } }
